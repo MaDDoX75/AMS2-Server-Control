@@ -1,0 +1,54 @@
+name: "🐞 Bug report / Fehler melden"
+description: Something doesn't work as expected. / Etwas funktioniert nicht wie erwartet.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping! English or German is fine. / Danke fürs Melden! Deutsch oder Englisch ist okay.
+  - type: input
+    id: version
+    attributes:
+      label: Tool version / Version des Tools
+      description: Shown at the bottom left of the window. / Steht unten links im Fenster.
+      placeholder: "0.2"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened? / Was ist passiert?
+      placeholder: "When I click … the tool … / Wenn ich auf … klicke, …"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce / So kann man es nachstellen
+      placeholder: |
+        1. Open … / Öffne …
+        2. Click … / Klicke …
+        3. …
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect? / Was hast du erwartet?
+  - type: textarea
+    id: log
+    attributes:
+      label: Log / Fehlermeldung
+      description: Copy from ServerControl\logs or a screenshot of the error. / Aus ServerControl\logs kopieren oder Screenshot der Meldung.
+      render: text
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where does the server run? / Wo läuft der Server?
+      options:
+        - Same PC as the tool / Gleicher PC wie das Tool
+        - Other PC in my network / Anderer PC im Netzwerk
+        - Rented server / Gemieteter Server
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      placeholder: "Windows 11 24H2"
