@@ -1,4 +1,4 @@
-<img width="867" height="482" alt="banner" src="https://github.com/user-attachments/assets/16c618da-d601-4304-aac1-3e739ff27192" />
+<img width="572" height="318" alt="banner2" src="https://github.com/user-attachments/assets/e77c09e1-8e5d-4fd6-8239-d8f1498313f7" />
 <img width="180" height="180" alt="logo" src="https://github.com/user-attachments/assets/c658f1ed-0344-44e4-91fc-7b0baa4ed641" />
 
 <h1 align="center">AMS2 Server Control</h1>
