@@ -1,0 +1,24 @@
+name: "💡 Feature request / Wunsch"
+description: Idea for a new feature or race series. / Idee für eine neue Funktion oder Rennserie.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea / Deine Idee
+      placeholder: "It would be great if … / Es wäre toll, wenn …"
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why would it help? / Wofür brauchst du das?
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Type / Art
+      options:
+        - New feature / Neue Funktion
+        - Race series package / Rennserien-Paket
+        - Translation / Übersetzung
+        - Other / Sonstiges
