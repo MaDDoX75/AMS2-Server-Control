@@ -4,6 +4,62 @@
 
 Recent versions in English. The complete history (German) is in [CHANGELOG_DE.md](CHANGELOG_DE.md).
 
+### v0.236
+- Website: **view badges large** – click an achievement on the driver card to see it big with name, description and date (locked ones grey with what's missing)
+- Website: **driver card markers in racing style** – slanted racing font, status dot (green pulsing, red blinking), Fair Play with its own badge and gold shimmer, small icons for »since« and »last seen«
+- **Virtual repair costs**: the tool now counts every impact in races (also without the Idiot Rule) and converts it to euros (impact strength × €10 × class factor: Hypercar/LMP ×3, formula ×2, GT ×1.5, touring/classic ×1, cup ×0.5, kart ×0.1). Driver card: caused, taken, most expensive crash – plus a personal offer from **BUSTED Insurance**; »Damage €« column in the ranking (click to sort); new honour **Wrecking ball**. Counted from this version on
+- **One link for everything**: if »Link for {link}« is empty, the Discord link from the website settings is used
+- New chat command **`!discord`** – sends the Discord link privately
+- New tagline: *»The ultimate all-in-one solution for your Automobilista 2 dedicated server«* in the help window and the website footer
+- Fix: Community → Welcome & chat – the save buttons covered the note at the bottom, the placeholder hint was cut off
+- Added note (help/README and website footer): names of racing series, cars and tracks (e.g. IMSA, DTM) are trademarks of their respective owners
+
+### v0.235
+- Website: **custom achievement badges** instead of emojis – 12 round badges (bronze/silver/gold/platinum) on the driver card and in the »new achievement« toast; locked ones stay grey
+- Website: **ads with images** – every gag ad now has 3 pictures that rotate (small picture in the ad box, large picture on the fun page, switchable with dots)
+- **4 new gag ads**: Flutsch Oil, Green Flag Pharmacy, Pit Lane TV and Pit Stop Carwash (German and English)
+- Images are written as separate files to `website\Server1\img`
+
+### v0.234
+- Website: **16 real track outlines** from OpenStreetMap data (Nordschleife 24h, Nürburgring GP, Spa, Imola, Hungaroring, Jerez, Barcelona, Spielberg, Kyalami, Montreal, Sebring, Road Atlanta, Laguna Seca, Watkins Glen, Daytona, Indianapolis); other tracks keep the placeholder
+
+### v0.232
+- Fix: minimizing to the notification area closed the tool – it now keeps running
+- **Notification area icon** with status dot (green running, grey stopped, orange starting/update), tooltip with track and players, double-click opens the window, right-click menu (open, start/stop, restart, next championship race, chat, website, exit)
+- **Minimize to the notification area**, notifications for server start/stop, race finished and updates, optional **start in the notification area** (Settings → Server → Display)
+- Website: first real **track outline** – Nordschleife 24h from OpenStreetMap data
+
+### v0.231
+- Website: long server names in the header are no longer cut off (more width, slightly smaller font if needed, »…« only as a last resort)
+- Help window: the version number was hidden behind the buttons
+
+### v0.23 – Discord, chat & comfort
+- **Announce a championship on Discord** with a switch in step 1: posted after saving, later changes **update** the message, **deleting** the championship removes it from Discord
+- **Highlight tracks** (Nordschleife, Spa, Bathurst, Le Mans, Monza, Interlagos, Daytona, Imola): a special Discord announcement with a funny text when a race starts there; also in the championship announcement and as website news
+- **Private achievement message** after the race; new chat commands **`!mystats`** and **`!achievements`** (answer only to the sender)
+- **Weather dice with weather changes** (weighting none/1×/2×/3× under Championships → Automation) and a **dice per race** in the championship
+- **Desktop shortcut** prompt on the first start of a new version, plus a button in Help
+- **Backup on update** (`ServerControl\backups\exe`) and **»Back to v…«** in Help
+- **Website can be switched off completely** (Settings → Server → Display): the menu item disappears
+
+### v0.221
+- **Website has its own menu item** on the left (below Community) with the tabs **General**, **Sections & rules** and **View** – previously Community → Website
+- Website: bold text in results, ranking and driver card was smeared (became extra bold) – now clean everywhere
+
+### v0.22 – Clearer website
+- **New layout with tabs**: overview, championship, results, drivers, statistics, server rules; on phones the tabs sit at the bottom
+- **Overview** in 3 columns: **rotating news**, next race with countdown, last result with **podium confetti**, top 5 standings, joke ads and **fun facts**
+- **All championships** as cards (running, planned, finished) with calendar, standings and the new **points progression** chart; **hall of champions**
+- **Honours** (most loyal driver, unlucky one, ballast king, pole king), **server rules** page with copyable server name, join guide, automatic rules from your settings and your own rules
+- **Driver card in TV style**; BUSTED IDIOT stamp glows; joke ads rotate and open a small fun page
+- In the tool: switch website sections on/off and enter your own rules; website now in `ServerControl\website\Server1`
+- Fixes: blurry font in news and track names; sample data uses real AMS2 cars only
+
+### v0.21 – Local website
+- **Website** in `ServerControl\website` (new tab Community → Website): championship with calendar, standings and podium, **news**, latest results, season ranking, drivers with **driver card**, **server statistics** (most driven cars, popular tracks, classes, most active drivers, lap records), server status
+- **Animated achievements**, **3 designs** + auto, optional **joke ads**, **sample data** to try it out; updates after every race, on server start/stop and on demand
+- Fixes: firewall button uses the Windows tool netsh (Norton flagged the hidden PowerShell); missing English texts added
+
 ### v0.2 – Discord + network
 - **Discord notifications** (new tab Community → Discord): webhooks for server status, results and championships, stored encrypted, with **Send test**; **server online/offline** as one message that is kept up to date; **result** after every race (podium, class winners, fastest lap, standings, optional BUSTED IDIOTs); **new championship** at the first race or with the »Discord« button; server name to copy for the AMS2 server browser search; German or English
 - **Network check** under Settings → Network with a **traffic light on the overview**: Windows Firewall (»Allow in firewall« button), public IPv4 / DS-Lite, port 9000 exposure, automatic **Steam server browser check** after the server starts (no API key), **open ports via UPnP**

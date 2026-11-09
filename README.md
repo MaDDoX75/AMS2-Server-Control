@@ -6,6 +6,8 @@
 
 A Windows GUI for the **Automobilista 2 Dedicated Server**: install and update the server, set up races, run championships with points, manage drivers and race control – without editing config files. Plus rankings and achievements, the **Idiot Rule** against crash kids, **automatic Discord messages** and a **network check with router guide** so your friends can really join.
 
+*The ultimate all-in-one solution for your Automobilista 2 dedicated server*
+
 **All-in-one solution – no config fiddling**
 
 - **No flags to calculate, no config files to edit** – everything is done in the interface.
@@ -48,7 +50,7 @@ Appears on the very first start of AMS2 Server Control and any time via *Setting
 
 ## Main window
 
-- **Navigation** – Overview, Quick race, Championships, Drivers, Chat, Results, Penalties, Community, Presets; at the bottom Monitor, Help and Settings.
+- **Navigation** – Overview, Quick race, Championships, Drivers, Chat, Results, Penalties, Community, Website, Presets; at the bottom Monitor, Help and Settings.
 - **Overview** – live status, players, track, next championship race, network traffic light.
 - **Quick race** – **time-lapse races** (20–120 min or any length, felt duration 6/12/24 h); **🎲** random track, **🎲 Random weather** and random date; summary card at the top, track and car selection as cards, sessions, weather & time, rules & driving aids, race options and scoring. **Start race** saves and (re)starts the server, **Apply live** takes effect from the next session without a restart. A **pit lane** speed limit (track default or 40–200 km/h) is under Rules & driving aids. The page adapts to the window width. **★ Choose race series** and **Load preset** at the top; presets are created and managed on their own page. **★ Choose race series** sets the classes (multiclass for IMSA, WEC and Le Mans Series) and the option **only tracks matching the class** hides kart, oval, RX and truck tracks for circuit cars and shows the historic layouts for historic cars.
 - **Presets** – own page (✎) in the navigation below Community: preset cards with **New**, **Edit**, **Duplicate**, **Delete** and **Race it in quick race**. Editing opens the quick race editor in *preset mode* with an orange banner and **Save preset** / **Cancel** – your quick race is set aside meanwhile and comes back unchanged.
@@ -56,6 +58,7 @@ Appears on the very first start of AMS2 Server Control and any time via *Setting
 - **Championships** – several races with their own points system and standings. Real calendars as templates (GT3 series 2022–2026, IMSA 2026 and 2019, WEC 2026, Le Mans Series 2005, FIA GT 2005, Porsche Supercup, Super Trofeo, DTM 1991/1992). Step 1: **Load starting values from** (quick race or preset), the **★ race series** button shows the chosen series, and its own **Vehicles** box (free choice, one class, multiclass with max. cars per class, fixed car); the setup applies immediately. **★ Race series** in step 1 sets the classes, filters the tracks and shows only that series' calendars; championships can be **exported/imported** (`.ams2champ`) with progress and results or as a fresh championship – existing ones are never overwritten; tracks missing in AMS2 are replaced by similar ones. The big **Start next race** button runs the next round. **Step 2** uses a race series as track source: choose »— no race series (all tracks) —« or a series – the list then shows only its races (original date, length, replacement note, ✓ if already in the calendar); add single races or **Add all** (replace or append), mix series, **🎲 Random season**, **🎲 Roll weather**, **🎲** random date. **Continuous mode** (step 4): if nobody is online for a set time the race is skipped without scoring; at the end the calendar starts over (points carry on or new season, old one archived). **Without restart** (Championships → Automation): after the race the next championship race is sent live to the server – everyone stays in the lobby; if nobody is online the server simply restarts, and if the success ballast changes the server restarts 30 seconds after an announcement.
 - **Drivers** – tab **On the server** (live player list: private message, kick, ban, penalty record) and **VIP & admins** (reserved slots, VIP list, admin commands). Bans are on the **Penalties** page.
 - **Community** – **Welcome & chat** (greeting, chat commands, chat language) and **Discord** (automatic messages).
+- **Website** – **General** (on/off, sample data, title, Discord link, design, joke ads), **Sections & rules** and **View** (open, update, folder).
 - **Chat** – admin chat with history.
 - **Results** – every session is archived. Statistics with rankings, lap records and driver profiles, CSV export.
 - **Monitor** – CPU, RAM, network and ping of the PC and the server, server log.
@@ -66,6 +69,7 @@ Appears on the very first start of AMS2 Server Control and any time via *Setting
 
 - **? Help** in the navigation opens the help window with the tabs **Guide**, **Features** (this README) and **Changelog** (all changes). The texts are built into the EXE.
 - **Check for updates** looks for a newer version on GitHub (`MaDDoX75/AMS2-Server-Control`). If you want, the tool downloads the new `AMS2-Server-Control.exe`, closes, replaces the file and restarts. The server keeps running.
+- Before each update the tool backs up the previous EXE in `ServerControl\backups\exe`; **»Back to v…«** in the Help window restores it. On the first start of a new version the tool offers a **desktop shortcut** once (also available as a button in Help).
 - The tool checks automatically on start (can be switched off under *Settings → Server → Display*).
 
 ## Race control (penalties)
@@ -78,7 +82,7 @@ All save buttons show whether something is unsaved: **red with »●«** = unsav
 
 ## Server addon “TGC_Server_Manager”
 
-The tool installs its own Lua addon when saving (called `tgc_manager` up to v0.197 – on the next server start with v0.198 the old addon is removed automatically and the ranking, results and records are kept). It provides the welcome message, chat commands (`!help`, `!rank`, `!top`, `!best`, `!record`, `!info`, `!next`), points and the server ranking (also when the tool is closed), VIP slots and class limits. It also sends a **personal greeting** with the driver's points in the server ranking and the running championship, supports a `{link}` placeholder (e.g. your Discord), announces **VIPs** in the in-game chat (optional) and tells every driver his **success ballast** before the race. Changes take effect after a server restart.
+The tool installs its own Lua addon when saving (called `tgc_manager` up to v0.197 – on the next server start with v0.198 the old addon is removed automatically and the ranking, results and records are kept). It provides the welcome message, chat commands (`!help`, `!rank`, `!top`, `!best`, `!record`, `!info`, `!next`; `!mystats`, `!achievements` and `!discord` are answered by the tool), points and the server ranking (also when the tool is closed), VIP slots and class limits. It also sends a **personal greeting** with the driver's points in the server ranking and the running championship, supports a `{link}` placeholder (e.g. your Discord – falls back to the website's Discord link), announces **VIPs** in the in-game chat (optional) and tells every driver his **success ballast** before the race. Changes take effect after a server restart.
 
 ## Discord (Community → Discord)
 
@@ -86,6 +90,13 @@ The tool installs its own Lua addon when saving (called `tgc_manager` up to v0.1
 - Links are stored **encrypted** (readable only on this PC with your Windows account) and are not exported. Never share them.
 - **Server online/offline**: one message that is kept up to date (track, vehicles, session, players, championship). **Result** after every race with players (podium, class winners, fastest lap, standings, optional BUSTED IDIOT kicks). **New championship** at the first race or with the **Discord** button.
 - Every message shows the **server name to copy** – paste it into the AMS2 server browser search (partial names work). Messages in German or English; the tool must be running.
+
+## Local website (menu item Website)
+
+- The tool builds its own **website** in `ServerControl\website\Server1` – open `index.html` with **Open website** or a double click, no web server needed.
+- Contents: running **championship** (calendar, standings, last podium), **news** (wins, streaks, lap records, achievements, match point, new drivers), **latest results**, **season ranking**, **drivers** with a **driver card** (stats, classes, tracks, cars, penalty record, achievements), **server statistics** (most driven cars, most popular tracks, classes, most active drivers, lap records) and the server status.
+- Tabs: **overview** (rotating news, next race, last podium, top 5, fun facts), **championship** (all championships as cards, points progression, hall of champions), **results**, **drivers**, **statistics** (with honours) and **server rules** (copyable server name, join guide, automatic and your own rules). Each section can be switched off in the tool.
+- **Achievements** with custom round badges (bronze to platinum); new ones pop up, wiggle and glow with »NEW!«; **3 designs** (TGC, dark, light + auto); optional **joke ads** with rotating pictures (9 ads); **virtual repair costs** (every impact converted to euros by strength and car class – driver card, ranking, »Wrecking ball« honour); **sample data** to try it out. Steam IDs are never shown. Uploading comes with v0.3.
 
 ## So friends can join
 
@@ -109,12 +120,11 @@ The tool is built for a server on your own PC. On a rented server (e.g. Zap) cur
 - **Not possible yet**: driver list, admin chat, apply live, fetching results into the tool, uploading points for the greeting, and start/stop/restart. For these the tool needs the server on the same PC.
 - Support via FTP is planned. Ask your host first whether Lua addons are allowed.
 
-
 ## About
 
 **AMS2 Server Control**
 Developed by MaDDoX for THC Sim Racing.
-Version 0.2 · November 2026
+Version 0.236 · November 2026
 Website: https://github.com/MaDDoX75/AMS2-Server-Control
 
 AMS2 Server Control © 2026 MaDDoX · The Game Central. All rights reserved.
@@ -127,4 +137,4 @@ The THC Sim Racing logo [THC] is the property of THC Sim Racing.
 
 **No warranty:** Use at your own risk. The program writes `server.cfg` and other files of the dedicated server (a backup is made first each time). No liability is accepted for data loss, server outages or errors in standings and results.
 
-**Not an official product:** This program is a fan project and is not affiliated with Reiza Studios. "Automobilista 2" is a trademark of Reiza Studios. The program controls the official AMS2 Dedicated Server through its configuration files, HTTP API and Lua interface and does not change anything in the game. SteamCMD and Steam are services of Valve.
+**Not an official product:** This program is a fan project and is not affiliated with Reiza Studios. "Automobilista 2" is a trademark of Reiza Studios. Names of racing series, cars, manufacturers and tracks (e.g. IMSA, DTM, GT World Challenge, Porsche, Nürburgring) are trademarks of their respective owners and are used for descriptive purposes only – there is no affiliation with them. The program controls the official AMS2 Dedicated Server through its configuration files, HTTP API and Lua interface and does not change anything in the game. SteamCMD and Steam are services of Valve.

@@ -2,6 +2,67 @@
 
 [English](CHANGELOG.md)
 
+### v0.236 (09.11.2026)
+- Website: **Abzeichen groß ansehen** – Klick auf ein Achievement auf der Fahrerkarte zeigt es groß mit Name, Beschreibung und Datum (nicht erreichte grau mit Hinweis, was fehlt)
+- Website: **Marker auf der Fahrerkarte im Rennsport-Look** – schräg in Rennschrift, Status-Punkt (grün pulsierend, rot blinkend), Fair-Play mit eigenem Abzeichen und Gold-Schimmer, kleine Symbole bei »Dabei seit« und »Zuletzt«
+- **Virtuelle Reparaturkosten**: Das Tool zählt jetzt jeden Aufprall im Rennen mit (auch ohne Idioten-Regel) und rechnet ihn in Euro um (Aufprallstärke × 10 € × Klassen-Faktor: Hypercar/LMP ×3, Formel ×2, GT ×1,5, Tourenwagen/Classic ×1, Cup ×0,5, Kart ×0,1). Auf der Fahrerkarte: verursacht, abbekommen, teuerster Crash – dazu ein persönliches Angebot der **BUSTED Versicherung**; in der Rangliste eine Spalte »Schaden €« (Klick sortiert); neuer Ehrenpreis **Abrissbirne**. Zählt ab dieser Version, ältere Rennen haben keine Werte
+- **Ein Link für alles**: Ist »Link für {link}« leer, nimmt das Tool den Discord-Link aus den Website-Einstellungen
+- Neuer Chat-Befehl **`!discord`** – schickt dem Fragenden den Discord-Link privat (abschaltbar unter Community → Willkommen & Chat)
+- Neue Unterzeile: *»Die ultimative All-in-One-Lösung für deinen Automobilista 2 Dedicated Server«* in der Hilfe und in der Fußzeile der Website
+- Korrektur: Community → Willkommen & Chat – die Knöpfe »Speichern« überdeckten den Hinweis unten, der Platzhalter-Hinweis war abgeschnitten
+- Hinweis ergänzt (Hilfe/README und Website-Fußzeile): Namen von Rennserien, Fahrzeugen und Strecken (z. B. IMSA, DTM) sind Marken ihrer jeweiligen Eigentümer
+
+### v0.235 (08.11.2026)
+- Website: **eigene Achievement-Abzeichen** statt Emojis – 12 runde Abzeichen (Bronze/Silber/Gold/Platin) auf der Fahrerkarte und im »Neues Achievement«-Hinweis; noch nicht erreichte bleiben grau
+- Website: **Werbung mit Bildern** – jede Gag-Werbung hat jetzt 3 Motive, die beim Wechseln durchrotieren (kleines Bild in der Werbebox, großes Bild auf der Spaß-Seite, dort per Punkte umschaltbar)
+- **4 neue Gag-Werbungen**: Flutsch-Öl, Green Flag Apotheke, Boxengasse TV und Boxenstopp Carwash (Deutsch und Englisch)
+- Die Bilder liegen als eigene Dateien im Ordner `website\Server1\img` (werden automatisch geschrieben)
+
+### v0.234 (08.11.2026)
+- Website: **16 echte Strecken-Silhouetten** aus OpenStreetMap-Daten – Nordschleife 24h, Nürburgring GP, Spa, Imola, Hungaroring, Jerez, Barcelona, Spielberg, Kyalami, Montreal, Sebring, Road Atlanta, Laguna Seca, Watkins Glen, Daytona (Sportwagen-Kurs) und Indianapolis (Road Course); alle anderen Strecken zeigen weiter den Platzhalter
+
+### v0.232 (08.11.2026)
+- Korrektur: Nach dem Minimieren in den Infobereich wurde das Tool beendet – jetzt läuft es im Infobereich weiter
+- **Symbol im Infobereich** (unten rechts neben der Uhr) mit Status-Punkt: grün = Server läuft, grau = gestoppt, orange = startet/Update; Mauszeiger zeigt Strecke und Spieler, Doppelklick öffnet das Fenster
+- **Rechtsklick-Menü**: Öffnen, Server starten/stoppen, Neustart, nächstes Meisterschaftsrennen, Chat, Website öffnen, Beenden
+- **Minimieren legt das Tool in den Infobereich**; **Hinweise** bei Serverstart/-stopp, Rennende (Sieger) und neuem Update – nur, wenn das Fenster nicht zu sehen ist; optional **»Im Infobereich starten«** (alles unter Einstellungen → Server → Anzeige)
+- Website: erste echte **Strecken-Silhouette** – Nordschleife 24h aus OpenStreetMap-Daten (Kalender und »Nächstes Rennen«), die anderen Strecken behalten den Platzhalter
+
+### v0.231 (08.11.2026)
+- Website: langer Servername im Seitenkopf wird nicht mehr abgeschnitten – der Kopf nutzt mehr Breite, die Schrift wird bei Bedarf etwas kleiner, erst dann kommt »…« (ganzer Name beim Darüberfahren)
+- Hilfe-Fenster: Versionsnummer unten links war von den Knöpfen verdeckt
+
+### v0.23 (08.11.2026) – Discord, Chat & Komfort
+- **Meisterschaft im Discord ankündigen** per Schalter in Schritt 1: Nach dem Speichern wird sie gepostet, spätere Änderungen **aktualisieren** die Nachricht, beim **Löschen** der Meisterschaft verschwindet sie auch im Discord
+- **Highlight-Strecken** (Nordschleife, Spa, Bathurst, Le Mans, Monza, Interlagos, Daytona, Imola): Startet dort ein Rennen, gibt es eine Sonder-Ankündigung im Discord mit lustigem Text (»Wohnmobile mit Augsburger Kennzeichen …«); auch in der Meisterschafts-Ankündigung und als News auf der Website
+- **Achievements privat**: Wer nach dem Rennen ein Achievement freischaltet, bekommt eine private Chat-Nachricht
+- Neue Chat-Befehle **`!mystats`** (eigene Statistik und Status) und **`!achievements`** (eigene Achievements und das nächste Ziel) – Antwort nur an den Fragenden
+- **Wetter würfeln mit Wetterwechseln**: Der Würfel bestimmt jetzt auch, wie oft das Wetter im Rennen wechselt (Gewichtung keiner/1×/2×/3× unter Meisterschaften → Automatik); neuer **Würfel pro Rennen** neben »Wetter Rennen« in der Meisterschaft
+- **Desktop-Verknüpfung**: Beim ersten Start einer neuen Version (auch nach der Installation) fragt das Tool einmal nach einer Verknüpfung (Ja / Nein / Nicht mehr fragen); dazu ein Knopf in der Hilfe
+- **Backup beim Update**: Die bisherige EXE wird vor jedem Update gesichert (`ServerControl\backups\exe`); in der Hilfe **»Zurück zu v…«** setzt auf die letzte Version zurück (und sichert dabei die aktuelle)
+- **Website ganz abschaltbar** unter Einstellungen → Server → Anzeige: Der Menüpunkt verschwindet, es werden keine Website-Dateien geschrieben
+
+### v0.221 (08.11.2026)
+- **Website hat einen eigenen Menüpunkt** links (unter Community) mit den Reitern **Allgemein**, **Bereiche & Regeln** und **Ansehen** – vorher Community → Website
+- Website: fette Schrift in Ergebnissen, Rangliste und Fahrerkarte war verschmiert (wurde zu extra-fett) – jetzt überall sauber
+
+### v0.22 (08.11.2026) – Website übersichtlicher
+- **Neuer Aufbau mit Reitern**: Übersicht, Meisterschaft, Ergebnisse, Fahrer, Statistik, Server-Regeln – kein langes Scrollen mehr; am Handy sitzen die Reiter unten
+- **Übersicht** in 3 Spalten: **News wechseln automatisch** (immer 3 sichtbar), nächstes Rennen mit Countdown, letztes Ergebnis mit **Konfetti beim Podium** (einmal pro Rennen), Tabelle Top 5, Gag-Werbung und **Fun-Facts** (»12.430 km = 0,3× um die Erde«)
+- **Alle Meisterschaften** als Kärtchen (läuft, geplant, beendet) – Klick zeigt Kalender, Wertung und den neuen **Punkte-Verlauf** (Linien pro Fahrer, Namen zum Ein-/Ausblenden); **Champions-Galerie** mit allen Meistern
+- **Ehrenpreise**: Treuester Fahrer, Pechvogel (meiste Ausfälle), Ballast-König, Pole-König
+- **Server-Regeln**: Servername mit Kopier-Knopf und Anleitung zum Beitreten, Regeln aus den Einstellungen automatisch (Idioten-Regel, Wertung, Klassen-Kick, Chat-Befehle, Passwort) plus eigene Regeln aus dem Tool
+- **Fahrerkarte im TV-Look** (breit, mit Aufklapp-Animation); bei BUSTED IDIOT bleibt das Bild grau und nur der Stempel **glüht rot**
+- **Gag-Werbung wechselt** an mehreren Stellen; Klick öffnet eine kleine Spaß-Seite des Fantasie-Sponsors
+- Im Tool: **Bereiche ein- und ausschalten** und **eigene Regeln** unter Community → Website; Website liegt jetzt in `ServerControl\website\Server1`
+- Korrekturen: Schrift bei News und Streckennamen war verschwommen (weniger fett, keine künstliche Fettschrift mehr); Beispieldaten nur noch mit echten AMS2-Autos
+
+### v0.21 (07.11.2026) – Lokale Website
+- **Website** im Ordner `ServerControl\website` (neuer Reiter Community → Website): Meisterschaft mit Kalender, Wertung und Podium, **News** (Siege, Siegesserien, Rundenrekorde, Achievements, Matchball, neue Fahrer), letzte Ergebnisse, Saison-Rangliste, Fahrerfeld mit **Fahrerkarte**, **Server-Statistik** (meistgefahrene Autos, beliebteste Strecken, Klassen, aktivste Fahrer, Rundenrekorde), Server-Status
+- **Achievements animiert** (Plopp, Wackeln, Leuchten, »NEU!«, Einblendung mit Konfetti einmal pro Besucher), **3 Designs** + Auto, **Gag-Werbung** (abschaltbar), **Beispieldaten** zum Ausprobieren
+- Aktualisiert sich nach jedem Rennen, beim Serverstart/-stopp und per Knopf; Knöpfe »Website öffnen«, »Jetzt aktualisieren«, »Ordner öffnen«
+- Korrekturen: Firewall-Knopf nutzt das Windows-Werkzeug netsh (Norton hatte die versteckte PowerShell als Schadsoftware erkannt); fehlende englische Texte ergänzt; Punkte-Tabelle in der Discord-Meisterschaftsankündigung
+
 ### v0.2 (06.11.2026) – Discord + Netzwerk
 - **Discord-Benachrichtigungen** (neuer Reiter Community → Discord): Webhooks für Server-Status, Ergebnisse und Meisterschaften, verschlüsselt gespeichert, mit **Test senden**; **Server online/offline** als eine Nachricht, die laufend aktualisiert wird; **Ergebnis** nach jedem Rennen (Podium, Klassensieger, schnellste Runde, Tabellenspitze, optional BUSTED IDIOTs); **neue Meisterschaft** automatisch beim ersten Rennen oder per Knopf »Discord«; Servername zum Kopieren für die Suche im AMS2-Serverbrowser; Deutsch oder English
 - **Netzwerk-Check** unter Einstellungen → Netzwerk mit **Ampel auf der Übersicht**: Windows-Firewall (Knopf »Firewall freigeben«), öffentliche IPv4 / DS-Lite, Port 9000 nach außen offen, **Steam-Serverbrowser-Check** automatisch nach dem Serverstart (ohne API-Schlüssel), **Ports per UPnP freigeben**

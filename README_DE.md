@@ -6,6 +6,8 @@
 
 GUI für den **Automobilista 2 Dedicated Server**: Server installieren und einrichten, Schnellrennen und Meisterschaften fahren, Start, Stopp und Neustart per Knopfdruck. Dazu kommen Admin-Chat, Fahrerliste mit Kick und Bann, Ergebnisse und Statistik mit Rangliste und Achievements, Chat-Befehle wie `!rank`, die **Idioten-Regel** gegen Crash-Kids, **automatische Discord-Nachrichten** und ein **Netzwerk-Check mit Router-Anleitung**, damit Freunde wirklich beitreten können.
 
+*Die ultimative All-in-One-Lösung für deinen Automobilista 2 Dedicated Server*
+
 **All-in-One-Lösung – ohne Config-Gefummel**
 
 - **Keine Flags berechnen, keine Config-Dateien im Editor bearbeiten** – alles läuft über die Oberfläche.
@@ -74,7 +76,7 @@ Alle Strecken, Autos, Klassen, Wetter- und Regelwerte sind mit Namen im Tool ein
 
 - **Kopfleiste oben**: groß der **Servername** (auch in der Titelleiste und Taskleiste), dazu Status des Servers, aktuelle Strecke und Session, Spieler, dazu kleine Balken für CPU, RAM, Upload und Ping. Grün = alles gut, gelb ab 70 %, rot ab 90 %.
 - **Links**: der große Knopf **Server starten / Server stoppen**, darunter **Neustart**. Sind Spieler online, fragt das Tool vorher nach.
-- **Navigation links**: Übersicht, Schnellrennen, Meisterschaften, Fahrer, Chat, Ergebnisse, Strafen, Community, Vorlagen. Unten **Monitor**, **Hilfe** und **Einstellungen**.
+- **Navigation links**: Übersicht, Schnellrennen, Meisterschaften, Fahrer, Chat, Ergebnisse, Strafen, Community, Website, Vorlagen. Unten **Monitor**, **Hilfe** und **Einstellungen**.
 
 | Seite | Inhalt |
 |---|---|
@@ -85,6 +87,7 @@ Alle Strecken, Autos, Klassen, Wetter- und Regelwerte sind mit Namen im Tool ein
 | **Strafen** | Übersicht auffälliger Fahrer, Sperrliste, Strafen der Rennleitung, Einstellungen der Idioten-Regel |
 | **Chat** | Admin-Chat (siehe unten) |
 | **Community** | **Willkommen & Chat** (Begrüßung, Chat-Befehle, Chat-Sprache) und **Discord** (automatische Nachrichten) |
+| **Website** | **Allgemein** (an/aus, Beispieldaten, Titel, Discord-Link, Design, Gag-Werbung), **Bereiche & Regeln** (Bereiche ein/aus, eigene Regeln) und **Ansehen** (öffnen, aktualisieren, Ordner) |
 | **Vorlagen** | gespeicherte Renn-Setups (siehe unten) |
 | **Ergebnisse** | Reiter **Ergebnisse** (alle Sessions, Gesamt oder pro Klasse, CSV-Export) und **Statistik** (Top-Fahrer, Rundenrekorde, Fahrerprofil per Doppelklick) |
 | **Monitor** | Reiter **Auslastung** (Rundinstrumente, Verlauf, Höchstwerte) und **Server-Log** |
@@ -157,6 +160,9 @@ Alle Speicher-Knöpfe zeigen, ob etwas noch nicht gespeichert ist: **rot mit »�
 - Links in der Navigation **? Hilfe**: öffnet das Hilfe-Fenster mit den Reitern **Anleitung** (Schritt für Schritt), **Funktionen** (diese README) und **Changelog** (alle Änderungen). Die Texte stecken in der EXE und passen immer zur Version.
 - **Auf Updates prüfen** (im Hilfe-Fenster) schaut auf GitHub (`MaDDoX75/AMS2-Server-Control`) nach einer neueren Version. Auf Wunsch lädt das Tool die neue `AMS2-Server-Control.exe`, beendet sich, tauscht die Datei aus und startet neu. Der Server läuft dabei weiter.
 - Beim Start prüft das Tool das automatisch, abschaltbar unter *Einstellungen → Server → Anzeige → Beim Start nach Updates suchen*.
+- Vor jedem Update sichert das Tool die bisherige EXE in `ServerControl\backups\exe`. Mit **»Zurück zu v…«** im Hilfe-Fenster geht es auf diese Version zurück (die aktuelle wird dabei gesichert). Ältere Versionen gibt es auf GitHub unter »Releases«.
+- **Infobereich (Tray)**: Das Tool zeigt unten rechts neben der Uhr ein Symbol mit Status-Punkt. Minimieren legt es dorthin, Doppelklick holt das Fenster zurück, Rechtsklick öffnet ein Menü (Server starten/stoppen, Neustart, nächstes Meisterschaftsrennen, Chat, Website, Beenden). Einstellbar unter *Einstellungen → Server → Anzeige*, auch »Im Infobereich starten«.
+- **Desktop-Verknüpfung**: Beim ersten Start einer neuen Version fragt das Tool einmal danach (Ja / Nein / Nicht mehr fragen); später geht es über den Knopf **Desktop-Verknüpfung** in der Hilfe.
 
 ## Einstellungen
 
@@ -235,13 +241,16 @@ Einige Funktionen laufen direkt im Server. Das Tool legt dafür beim Speichern d
   | `!record` | Streckenrekord für Strecke und Klasse |
   | `!info` | Strecke, Klassen, Renndauer, Fahrhilfen |
   | `!next` | nächstes Event (z. B. nächstes Meisterschaftsrennen) |
+  | `!mystats` | eigene Statistik: Rennen, Siege, Podien, Poles, Runden, Status, Achievements (beantwortet das Tool) |
+  | `!achievements` | eigene Achievements und das nächste Ziel (beantwortet das Tool) |
+  | `!discord` | Link zu eurem Discord (aus »Link für {link}« oder der Website, beantwortet das Tool) |
   | `!help` | Liste der Befehle |
 
 - **Ergebnisse**: Nach jeder Session (Training, Quali, Rennen) speichert das Addon das Ergebnis. Das Tool archiviert es dauerhaft in `ServerControl\results`, auch wenn es beim Rennen nicht offen war (das Addon hält die letzten 200 Sessions vor).
 - **Rangliste**: Das Addon zählt Punkte, Siege und Podien selbst mit, damit `!rank` auch ohne Tool funktioniert. Sie beginnt bei null, sobald v0.12 läuft.
 - **Reservierte Plätze**: Normale Spieler können nur „Max. Spieler – reserviert“ Plätze belegen. Wer darüber liegt, bekommt eine Nachricht und wird nach 5 Sekunden getrennt. Spieler auf der VIP-Liste kommen immer rein, solange noch ein Platz frei ist. Ist der Server komplett voll, kann auch ein VIP nicht beitreten.
 - **Persönliche Begrüßung**: Wer joint, bekommt eine private Nachricht mit seinem Punktestand in der Server-Rangliste und – wenn eine Meisterschaft läuft – mit Platz und Punkten dort. Der Text ist mit Platzhaltern anpassbar (Community → Willkommen & Chat).
-- **Link**: Der Platzhalter `{link}` setzt z. B. deine Discord- oder Webseiten-Adresse in die Willkommensnachricht.
+- **Link**: Der Platzhalter `{link}` setzt z. B. deine Discord- oder Webseiten-Adresse in die Willkommensnachricht. Ist das Feld leer, nimmt das Tool den Discord-Link der Website. Den Link gibt es auch per `!discord` im Chat.
 - **VIP-Ankündigung**: Joint ein VIP, sehen alle im Spiel-Chat eine kurze Ankündigung (abschaltbar).
 - **Ballast-Info**: Bei Erfolgsballast bekommt jeder Fahrer vor dem Rennen eine private Nachricht mit seinem Ballast.
 - **Klassen-Limit**: Bei Multiclass hat jede Klasse ein Feld „max.“ (0 = unbegrenzt). Wer zu viel ist, bekommt in der Lobby alle 20 Sekunden eine Warnung. Optional wird er nach einer einstellbaren Zeit gekickt.
@@ -298,6 +307,19 @@ Einige Funktionen laufen direkt im Server. Das Tool legt dafür beim Speichern d
 - Jede Nachricht zeigt den **Servernamen zum Kopieren** (ohne angehängte Strecke). In AMS2: Online → Serverbrowser → Suche → einfügen; die Suche findet auch Teile des Namens.
 - Sprache der Nachrichten: Deutsch oder English. Jede Nachrichtenart lässt sich einzeln abschalten. Das Tool muss laufen.
 
+## Lokale Website (Menüpunkt Website)
+
+- Das Tool baut eine eigene **Website** im Ordner `ServerControl\website\Server1` – `index.html` per Knopf **Website öffnen** oder Doppelklick im Browser ansehen, ganz ohne Webserver.
+- Inhalt: **laufende Meisterschaft** (Kalender, Fahrerwertung, Podium des letzten Rennens), **News** (Siege, Siegesserien, neue Rundenrekorde, Achievements, Matchball, neue Fahrer), **letzte Ergebnisse**, **Saison-Rangliste**, **Fahrerfeld** mit **Fahrerkarte** (Statistik, Klassen, Strecken, Autos, Strafregister, Achievements), **Server-Statistik** (meistgefahrene Autos, beliebteste Strecken, Klassen, aktivste Fahrer, Rundenrekorde) und der Server-Status.
+- Aufbau mit **Reitern**: **Übersicht** (wechselnde News, nächstes Rennen mit Countdown, letztes Podium mit Konfetti, Tabelle Top 5, Fun-Facts), **Meisterschaft** (alle Meisterschaften als Kärtchen, Punkte-Verlauf, Champions-Galerie), **Ergebnisse**, **Fahrer**, **Statistik** (mit Ehrenpreisen) und **Server-Regeln** (Servername zum Kopieren, Anleitung zum Beitreten, Regeln aus den Einstellungen plus eigene Regeln).
+- Unter **Website → Bereiche & Regeln** lässt sich jeder Bereich ein- und ausschalten; eigene Regeln trägst du im Feld **Server-Regeln** ein (eine pro Zeile).
+- **Achievements** mit eigenen runden Abzeichen (Bronze bis Platin, per Klick groß): nicht erreichte sind ausgegraut, neue (letzte 7 Tage) ploppen auf, wackeln und leuchten mit »NEU!« – dazu einmal pro Besucher eine Einblendung mit Konfetti.
+- **3 Designs** (TGC, Dunkel, Hell, dazu Auto) – Besucher schalten oben rechts selbst um; Standard im Tool wählbar.
+- **Virtuelle Reparaturkosten** (Gag): jeder Aufprall im Rennen wird je nach Stärke und Fahrzeugklasse in Euro umgerechnet – auf der Fahrerkarte (verursacht, abbekommen, teuerster Crash, Angebot der BUSTED Versicherung), in der Rangliste und als Ehrenpreis »Abrissbirne«.
+- **Gag-Werbung** (abschaltbar): Apex Kaffee, Ballast-Diät, Kiesbett Reisen, Boxenfunk Energy, BUSTED Versicherung, Flutsch-Öl, Green Flag Apotheke, Boxengasse TV und Boxenstopp Carwash – mit wechselnden Bildern an mehreren Stellen, ein Klick öffnet eine kleine Spaß-Seite mit großem Bild.
+- **Beispieldaten** zum Ausprobieren (Standard an) – zeigen, wie die Seite mit vielen Rennen aussieht. Abschalten, sobald genug eigene Rennen da sind.
+- Aktualisiert sich nach jedem Rennen, beim Start/Stopp des Servers und per Knopf. Steam-IDs stehen nicht auf der Seite. Hochladen ins Internet kommt mit v0.3.
+
 ## Damit Freunde beitreten können
 
 - **Netzwerk-Check** (Einstellungen → Netzwerk, Ampel auch auf der Übersicht): prüft die **Windows-Firewall** (Knopf **Firewall freigeben** legt eine Regel an und entfernt alte Sperren, fragt nach Admin-Rechten), die **öffentliche IPv4** (DS-Lite/CGNAT), ob die **Steuer-Schnittstelle** (Port 9000) nach außen offen ist und – etwa 2 und 5 Minuten nach dem Serverstart – ob der Server im **Steam-Serverbrowser** steht (ohne API-Schlüssel). **Ports per UPnP freigeben** trägt die Freigaben automatisch im Router ein, wenn der Router das erlaubt.
@@ -340,12 +362,11 @@ Das Tool ist für einen Server auf dem eigenen PC gebaut. Bei einem gemieteten S
 - **Noch nicht möglich**: Fahrerliste, Admin-Chat, Live übernehmen, Ergebnisse ins Tool holen, Punktestand für die Begrüßung hochladen sowie Start, Stopp und Neustart. Dafür braucht das Tool den Server auf demselben PC.
 - Geplant ist eine Unterstützung per FTP. Frag vorher beim Anbieter nach, ob Lua-Addons erlaubt sind.
 
-
 ## Über das Programm
 
 **AMS2 Server Control**
 Entwickelt von MaDDoX für THC Sim Racing.
-Version 0.2 · November 2026
+Version 0.236 · November 2026
 Webseite: https://github.com/MaDDoX75/AMS2-Server-Control
 
 AMS2 Server Control © 2026 MaDDoX · The Game Central. Alle Rechte vorbehalten.
@@ -358,4 +379,4 @@ Das THC-Sim-Racing-Logo [THC] ist Eigentum von THC Sim Racing.
 
 **Keine Gewähr:** Die Nutzung erfolgt auf eigene Gefahr. Das Programm schreibt die `server.cfg` und weitere Dateien des Dedicated Servers (vorher wird jeweils ein Backup angelegt). Für Datenverlust, Serverausfälle oder Fehler in Wertungen und Ergebnissen wird keine Haftung übernommen.
 
-**Kein offizielles Produkt:** Dieses Programm ist ein Fan-Projekt und steht in keiner Verbindung zu Reiza Studios. „Automobilista 2“ ist eine Marke von Reiza Studios. Das Programm steuert den offiziellen AMS2 Dedicated Server über dessen Konfigurationsdateien, HTTP-API und Lua-Schnittstelle und verändert nichts am Spiel. SteamCMD und Steam sind Dienste von Valve.
+**Kein offizielles Produkt:** Dieses Programm ist ein Fan-Projekt und steht in keiner Verbindung zu Reiza Studios. „Automobilista 2“ ist eine Marke von Reiza Studios. Namen von Rennserien, Fahrzeugen, Herstellern und Strecken (z. B. IMSA, DTM, GT World Challenge, Porsche, Nürburgring) sind Marken ihrer jeweiligen Eigentümer und werden nur beschreibend verwendet – es besteht keine Verbindung zu ihnen. Das Programm steuert den offiziellen AMS2 Dedicated Server über dessen Konfigurationsdateien, HTTP-API und Lua-Schnittstelle und verändert nichts am Spiel. SteamCMD und Steam sind Dienste von Valve.
